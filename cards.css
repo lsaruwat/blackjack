@@ -1,0 +1,219 @@
+html,body,p,div,h1,h2,h3,h4,h5,a,input{font-family: helvetica}
+
+body
+{
+	position: relative;
+}
+
+a
+{
+	text-decoration: none;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+table, tbody, tr, td
+{
+	font-family: helvetica;
+	font-size: 24px;
+	padding: 0px;
+}
+
+tr td
+{
+	border: solid 1px black;
+	padding: 10px;
+
+}
+
+div.card
+{
+	display: inline-block;
+	width: 100px;
+	height: 150px;
+	border: solid 1px #333;
+	border-radius: 5px 5px 5px 5px;
+	float: left;
+	margin-right: -40px;
+	position: relative;
+	background-color: white;
+	z-index: 1;
+}
+
+div.card:nth-child(2),div.card:nth-child(3)
+{
+	z-index: -1;
+	float: left;
+}
+
+div.card.hearts, div.card.diamonds
+{
+	color: red;
+}
+
+div.card div.main-number
+{
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px auto;
+	margin-top: 50px;
+}
+
+div.card-value, div.suit
+{
+	position: absolute;
+	left: 5px;
+}
+
+div.card-value{top: 5px;}
+div.card-value{top: 20px;}
+
+div.card-value.invert, div.suit.invert
+{
+	transform: rotate(180deg);
+	right: 5px;
+	text-align: right;
+	top: auto;
+	left: auto;
+}
+
+div.card-value.invert{bottom: 5px;}
+div.suit.invert{bottom: 20px;}
+
+div.dealer-area, div.user-area
+{
+	float: left;
+ 	min-width: 500px;
+ 	max-width: 50%;
+ 	margin-bottom: 100px;
+}
+
+div.card-table
+{
+	width: 100%;
+}
+
+div#user-score, div#dealer-score
+{
+	display: inline-block;
+}
+
+div.score-parent
+{
+	width: 100%;
+	display: inline-block;
+}
+
+div.score-parent p
+{
+	display: inline-block;
+}
+
+div#dealer-score
+{
+	visibility: hidden;
+}
+
+div.card#hidden-card
+{
+	background-color: #009352;
+}
+
+div.card#hidden-card div
+{
+	visibility: hidden;
+}
+
+
+div.controls
+{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 5;
+
+}
+
+div.button
+{
+	display: inline;
+}
+
+div.controls input
+{
+	outline: none;
+	margin-left: 1%;
+	width: 30%;
+	max-width: 120px;
+	height: 120px;
+	background-color: #009352;
+	font-size: 24px;
+	border: solid 2px #555;
+	padding: 0px;
+	-webkit-border-radius: 50%; 
+  	-moz-border-radius: 50%; 
+	border-radius: 50%;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	z-index: 100;
+}
+
+div#game-status, div#money
+{
+	text-align: center;
+	margin:0px auto;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+div.bet{text-align: center;}
+
+div.bet p
+{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+div#betValue{display: inline-block;}
+
+div.leaderboard
+{
+	text-align: center;
+}
+
+div.leaderboard table
+{
+	margin: 0px auto;
+}
+
+div.login-area
+{
+	position: absolute;
+	right: 10px;
+	display: inline-block;
+}
+
+div#money, div#game-status, div.bet
+{
+	height: 25px;
+}
+
+@media(max-width: 1000px){
+	div#money, div#game-status, div.bet
+	{
+		height: auto;
+		display: block;
+	}
+
+	div.login-area
+	{
+		display: block;
+		position: relative;
+	}
+
+	div.user-area, div.dealer-area{min-width: 300px;}
+}
