@@ -1,22 +1,20 @@
 <?php
 require_once "connect.php";
-	function generateRandomString($length = 10) 
-	{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, strlen($characters) - 1)];
-    }
-    return $randomString;
+	function generateRandomString($length = 10) {
+    	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    	$randomString = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+	    }
+	    return $randomString;
 	}
 	$salt = generateRandomString(16);
 	$username = $_POST['username'];
 	$password = sha1($_POST["password"].$salt);
 	$password2 = sha1($_POST["password2"].$salt);
-	if(strlen(trim($username)) < 5)
-	{
+	if(strlen(trim($username)) < 5){
 		echo "<a href='registerform.php'>username is too short or contains spaces</a>";
-		break;
+		exit;
 	}
 		$check="SELECT * FROM users WHERE username = :username";
 		$psql=$conn->prepare($check);// check for sql injection flaws
